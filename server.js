@@ -12,9 +12,12 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 
 mongoose
-  .connect(process.env.DATABASE_LOCAL, {
-    useNewUrlParser: true
-  })
+  .connect(
+    'mongodb+srv://kevvlar:kevvlar7694@kevvlar.zwqnf.mongodb.net/kevvlar?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true
+    }
+  )
   .then(() => {
     console.log('DB connection successful');
   });
